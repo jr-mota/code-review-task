@@ -1,18 +1,15 @@
-import api from '../../api/products.js';
-import Vue from 'vue';
-import Vuex from 'vuex';
+import Vue from "vue";
+import Vuex from "vuex";
+
+// Разделил на модули. Лучше сделать декомпозицию чем хранить всё в одном файле )
+import products from "./products";
+import cartOfProducts from "./cartOfProducts";
+
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-    getProductsList(ctx, data) {
-      return api.getProductsList();
-    },
-  },
   modules: {
-  }
-})
+    products,
+    cartOfProducts,
+  },
+});
